@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+class BsicCell: UICollectionViewCell{
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpViews()
+    }
+    func setUpViews() {
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Init(coder: ) has not been implemented")
+    }
+}
