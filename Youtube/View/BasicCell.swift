@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class BsicCell: UICollectionViewCell{
+class BasicCell: UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpViews()

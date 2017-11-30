@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class VideoCell: BsicCell {
+class VideoCell: BasicCell {
     //當我們每次呼叫dequeueReusableCell都會呼叫這個init func
     var video: Video?{
         didSet {

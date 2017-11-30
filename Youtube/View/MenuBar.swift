@@ -72,7 +72,7 @@ extension MenuBar: UICollectionViewDelegateFlowLayout{
     }
 }
 
-class MenuBarCell: BsicCell {
+class MenuBarCell: BasicCell {
     //當滑鼠點到的時候，以及選擇的時候，想要讓他做一些事情的時候。以下兩個參數可以使用
     override var isHighlighted: Bool{
         didSet{
