@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C02BD0641FCC6044009EA1B6 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BD0631FCC6044009EA1B6 /* HomeController.swift */; };
 		C02BD0671FCC643D009EA1B6 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02BD0661FCC643D009EA1B6 /* Video.swift */; };
+		C05462EF1FCF163D005D9DF7 /* SettingLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05462EE1FCF163D005D9DF7 /* SettingLauncher.swift */; };
 		C0CC3A8A1FC88C9B0064BACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CC3A891FC88C9B0064BACF /* AppDelegate.swift */; };
 		C0CC3A911FC88C9B0064BACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CC3A901FC88C9B0064BACF /* Assets.xcassets */; };
 		C0CC3A941FC88C9B0064BACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CC3A921FC88C9B0064BACF /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		C02BD0631FCC6044009EA1B6 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		C02BD0661FCC643D009EA1B6 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		C05462EE1FCF163D005D9DF7 /* SettingLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLauncher.swift; sourceTree = "<group>"; };
 		C0CC3A861FC88C9B0064BACF /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CC3A891FC88C9B0064BACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0CC3A901FC88C9B0064BACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				C02BD0631FCC6044009EA1B6 /* HomeController.swift */,
+				C05462EE1FCF163D005D9DF7 /* SettingLauncher.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				C0CC3A8A1FC88C9B0064BACF /* AppDelegate.swift in Sources */,
 				C02BD0671FCC643D009EA1B6 /* Video.swift in Sources */,
 				C0CC3AC61FCA39BA0064BACF /* BasicCell.swift in Sources */,
+				C05462EF1FCF163D005D9DF7 /* SettingLauncher.swift in Sources */,
 				C0CC3ABC1FC9ED770064BACF /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

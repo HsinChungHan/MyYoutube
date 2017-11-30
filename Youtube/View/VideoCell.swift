@@ -51,9 +51,9 @@ class VideoCell: BsicCell {
     }
     
     
-    let thumbnailImgView: UIImageView = {
-        let imgView = UIImageView()
-        imgView.backgroundColor = UIColor.blue
+    let thumbnailImgView: CustomImageView = {
+        let imgView = CustomImageView()
+        imgView.backgroundColor = UIColor.white
         //這邊的code可以當作預設的圖片
         imgView.image = UIImage(named: "test")
         //單設定.scaleAspectFill會讓圖片超出範圍，所以要裁減圖片
@@ -78,8 +78,8 @@ class VideoCell: BsicCell {
         return view
     }()
     
-    let userProfileImgView: UIImageView = {
-        let imgView = UIImageView()
+    let userProfileImgView: CustomImageView = {
+        let imgView = CustomImageView()
         imgView.image = UIImage(named: "test2")
         //讓userProfile變圓的
         imgView.layer.cornerRadius = CGFloat(PROFILE_IMGVIEW_HEIGHT/2)

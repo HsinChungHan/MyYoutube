@@ -69,9 +69,11 @@ class HomeController: UICollectionViewController {
         print(123)
     }
     
+    let settingLauncher = SettingLauncher()
     @objc func handleMoreBtn(){
-        print(123)
+        settingLauncher.showSettings()
     }
+    
     
     let menuBar: MenuBar = {
         let mb = MenuBar()
