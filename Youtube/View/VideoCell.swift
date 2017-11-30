@@ -41,7 +41,7 @@ class VideoCell: BasicCell {
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
             //再計算目前的text的字數會是多大的rect(attribute:調整字體大小)
             let estimatedRect = NSString(string: title).boundingRect(with: titleLableSize, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)], context: nil)
-            if estimatedRect.size.height > 20 {
+            if estimatedRect.size.height > 16 {
                 //若計算後高度超過20，調整titleLabelHightConstraint到44
                 titleLabelHightConstraint?.constant = 44
             }else{
@@ -95,7 +95,7 @@ class VideoCell: BasicCell {
         //讓這個label有兩行
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.lineBreakMode = .byCharWrapping
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
     

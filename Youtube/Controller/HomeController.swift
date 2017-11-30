@@ -69,11 +69,34 @@ class HomeController: UICollectionViewController {
         print(123)
     }
     
-    let settingLauncher = SettingLauncher()
+    //lazy var 的意思是當你的settingLauncher = nil的時候才會被呼叫。
+    //也就是說當我們按下handleMoreBtn時，會觸發settingLauncher，此時settingLauncher會設定homeController = self，在這個時候settingLauncher有值了。
+    //接下來，如果再按handleMoreBtn後，就不會再重新設值了
+    //在swiftYoutube(Ep95中14:40)有講到
+    lazy var settingLauncher: SettingLauncher = {
+        let launcher = SettingLauncher()
+        launcher.homeController = self
+        return launcher
+    }()
     @objc func handleMoreBtn(){
+        //當按下moreBtn時，要設定settingLauncher的HomeController為self
+        //否則當跳轉頁面的時候，便會因為HomeController為nil而無法跳轉頁面
+        //然而設定settingLauncher.homeController ＝ self這件事可以放在let settingLauncher = SettingLauncher()中去做，只需將let改為lazy var
+//        settingLauncher.homeController = self
         settingLauncher.showSettings()
     }
-    
+    func showControllerForSettingMenu(settingInfo: SettingInfo) {
+        let dummyVC = UIViewController()
+        dummyVC.navigationItem.title = settingInfo.labelName.rawValue
+        dummyVC.view.backgroundColor = UIColor.white
+        
+        navigationController?.navigationBar.tintColor = UIColor.white
+        //設定title顏色和字體(NSAttributedStringKey.font: UIFont(name: "Arial", size: 20)!)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white ]
+        
+        navigationController?.pushViewController(dummyVC, animated: true)
+        
+    }
     
     let menuBar: MenuBar = {
         let mb = MenuBar()

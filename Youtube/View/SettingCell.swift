@@ -8,15 +8,24 @@
 
 import UIKit
 class SettingCell: BasicCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupCell()
+    override var isHighlighted: Bool{
+        didSet{
+            cellImageView.backgroundColor = isHighlighted ? UIColor.darkGray : UIColor.white
+            nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.black
+            //要讓icon在點按的時候，變為有白色色調，放開時，回復為darkGray的色調
+            //同時也要在settingInfo中的didSet的iconImageView.image = UIImage(named: imgName)?添加.withRenderingMode(.alwaysTemplate)
+            //但因為.alwaysTemplate會使得iconImg是系統預設的藍色，所以要自己手動設定tintColor一開始為darkGray
+            iconImageView.tintColor = isHighlighted ? UIColor.white : UIColor.darkGray
+        }
     }
+    
     var settingInfo: SettingInfo? {
         didSet{
-            nameLabel.text = settingInfo?.labelName
+            nameLabel.text = (settingInfo?.labelName).map { $0.rawValue }
             guard let imgName = settingInfo?.imageName else{return}
-            iconImageView.image = UIImage(named: imgName)
+            iconImageView.image = UIImage(named: imgName)?.withRenderingMode(.alwaysTemplate)
+            //但因為.alwaysTemplate會使得iconImg是系統預設的藍色，所以要自己手動設定tintColor一開始為darkGray
+            iconImageView.tintColor = UIColor.darkGray
         }
     }
     let cellImageView: UIView = {
@@ -32,16 +41,20 @@ class SettingCell: BasicCell {
     
     let iconImageView: UIImageView = {
         let imgView = UIImageView()
-        imgView.image = UIImage(named: "feedback")
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
         return imgView
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupCell()
+    }
+    
     func setupCell() {
         addSubview(cellImageView)
         cellImageView.addSubview(nameLabel)
         cellImageView.addSubview(iconImageView)
-
         addConstraintsWithFormat(format: "V:|[v0]|", views: cellImageView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: cellImageView)
         addConstraintsWithFormat(format: "H:|-8-[v0(30)]-8-[v1]|", views: iconImageView, nameLabel)
